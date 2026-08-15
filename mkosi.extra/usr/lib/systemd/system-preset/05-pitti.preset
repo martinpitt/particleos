@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: LGPL-2.1-or-later
+
+# Sorts before the particleos presets, so that these rules win.
+
+# I build and install images myself; without any *.transfer definition in the
+# image these just fail, and the reboot timer is not what I want on a laptop.
+disable systemd-sysupdate.timer
+disable systemd-sysupdate-reboot.timer
