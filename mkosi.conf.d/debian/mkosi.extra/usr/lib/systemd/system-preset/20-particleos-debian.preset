@@ -13,3 +13,8 @@ disable openvpn.service
 disable rsync.service
 # cloud metadata service
 disable systemd-imdsd.socket
+
+# containers run in the user session, the system instance is not needed; this
+# also keeps network-online.target out of the boot path, which podman-restart
+# pulls in and which costs three seconds waiting for NetworkManager
+disable podman*
